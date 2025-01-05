@@ -1,0 +1,11 @@
+{
+    "domain": "djv_meter",
+    "name": "DJV-COM Meter",
+    "integration_type": "hub",
+    "version": "1.0.0",
+    "config_flow": true,
+    "documentation": "https://github.com/mcapmari/djv_meter",
+    "requirements": ["requests>=2.28.0"],
+    "dependencies": [],
+    "iot_class": "cloud_polling",
+}
