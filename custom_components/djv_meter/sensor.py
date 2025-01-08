@@ -32,7 +32,7 @@ class DJVMeterSensorDescription(SensorEntityDescription):
 
 SENSOR_TYPES: Final[tuple[DJVMeterSensorDescription, ...]] = (
     DJVMeterSensorDescription(
-        key="counter_indications",
+        key="meter_indications",  # Updated key to match desired entity_id
         name="Meter Indications",
         native_unit_of_measurement=UnitOfVolume.CUBIC_METERS,
         device_class=SensorDeviceClass.GAS,
@@ -40,12 +40,20 @@ SENSOR_TYPES: Final[tuple[DJVMeterSensorDescription, ...]] = (
         value_fn=lambda data: float(data["counter_indications"]),
     ),
     DJVMeterSensorDescription(
-        key="curent_day",
-        name="Last Day Consumption",
+        key="last_day_consumption",  # Updated key to match desired entity_id
+        name="Last Day",
         native_unit_of_measurement=UnitOfVolume.CUBIC_METERS,
         device_class=SensorDeviceClass.GAS,
         state_class=SensorStateClass.TOTAL,
         value_fn=lambda data: float(data["curent_day"]),
+    ),
+    DJVMeterSensorDescription(
+        key="current_month",
+        name="Current Month",
+        native_unit_of_measurement=UnitOfVolume.CUBIC_METERS,
+        device_class=SensorDeviceClass.GAS,
+        state_class=SensorStateClass.TOTAL,
+        value_fn=lambda data: float(data["sum"]),
     ),
 )
 
@@ -86,10 +94,17 @@ class DJVMeterSensor(CoordinatorEntity, SensorEntity):
         super().__init__(coordinator)
         self.entity_description = description
         self._meter_data = meter_data
+        
+        # Create entity_id with consistent pattern for all sensors
+        self.entity_id = f"sensor.djv_{description.key}_{meter_data['slave_uid']}"
+        
+        # Set the friendly name without the meter number
+        self._attr_name = description.name
+        
         self._attr_unique_id = f"{meter_data['tsd_id']}_{description.key}"
         self._attr_device_info = {
             "identifiers": {(DOMAIN, meter_data["tsd_id"])},
-            "name": f"Gas Meter {meter_data['slave_uid']}",
+            "name": "Gas Meter",
             "manufacturer": "DJV-COM",
             "model": "Gas Meter",
         }
