@@ -32,7 +32,7 @@ class DJVMeterSensorDescription(SensorEntityDescription):
 
 SENSOR_TYPES: Final[tuple[DJVMeterSensorDescription, ...]] = (
     DJVMeterSensorDescription(
-        key="meter_indications",  # Updated key to match desired entity_id
+        key="meter_indications",
         name="Meter Indications",
         native_unit_of_measurement=UnitOfVolume.CUBIC_METERS,
         device_class=SensorDeviceClass.GAS,
@@ -40,7 +40,7 @@ SENSOR_TYPES: Final[tuple[DJVMeterSensorDescription, ...]] = (
         value_fn=lambda data: float(data["counter_indications"]),
     ),
     DJVMeterSensorDescription(
-        key="last_day_consumption",  # Updated key to match desired entity_id
+        key="last_day_consumption",
         name="Last Day",
         native_unit_of_measurement=UnitOfVolume.CUBIC_METERS,
         device_class=SensorDeviceClass.GAS,
@@ -54,6 +54,14 @@ SENSOR_TYPES: Final[tuple[DJVMeterSensorDescription, ...]] = (
         device_class=SensorDeviceClass.GAS,
         state_class=SensorStateClass.TOTAL,
         value_fn=lambda data: float(data["sum"]),
+    ),
+    DJVMeterSensorDescription(
+        key="gas_price",
+        name="Gas Price",
+        native_unit_of_measurement="MDL/m³",
+        device_class=SensorDeviceClass.MONETARY,
+        state_class=SensorStateClass.TOTAL,
+        value_fn=lambda data: float(data["counter_settings"]["price"]["price"][0]),
     ),
 )
 
