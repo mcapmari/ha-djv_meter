@@ -4,7 +4,7 @@
 ---
 
 ## 📘 Overview  
-`ha-djv_meter` is a **Home Assistant custom integration** that connects to the [DJV-COM](https://djv-com.net/](https://djv-com.net/web/public/pv/#/login)) online portal to fetch gas meter data.
+`ha-djv_meter` is a **Home Assistant custom integration** that connects to the [DJV-COM](https://djv-com.net/](https://djv-com.net/web/public/pv/#/login)) online portal to fetch gas meter data for gas meters in the Republic of Moldova.
 
 It provides access to key metrics from your DJV-COM account:
 
