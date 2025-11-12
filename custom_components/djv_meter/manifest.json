@@ -7,6 +7,7 @@
     "documentation": "https://github.com/mcapmari/ha-djv_meter",
     "integration_type": "hub",
     "iot_class": "cloud_polling",
+    "issue_tracker": "https://github.com/mcapmari/ha-djv_meter/issues",
     "requirements": ["requests>=2.28.0"],
     "version": "1.2.0"
 }
