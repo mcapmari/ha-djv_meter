@@ -23,8 +23,8 @@ To log in, you’ll need:
 
 | Field | Description | Example Image |
 |:------|:-------------|:--------------|
-| **Username** | The **serial number of your radio module** | [<img src="https://djv-com.net/web/public/pv/static/media/user_name_help.fcc79f394ec6f6a77e32.jpg" width="250"/>](https://djv-com.net/web/public/pv/static/media/user_name_help.fcc79f394ec6f6a77e32.jpg) |
-| **Password** | The **serial number of your meter** | [<img src="https://djv-com.net/web/public/pv/static/media/password_help.9e89a213fa11b4266916.jpg" width="250"/>](https://djv-com.net/web/public/pv/static/media/password_help.9e89a213fa11b4266916.jpg) |
+| **Username** | The **serial number of your radio module** | [<img src="docs/user_name_help.jpg" width="250"/>](docs/user_name_help.jpg) |
+| **Password** | The **serial number of your meter** | [<img src="docs/password_help.jpg" width="250"/>](docs/password_help.jpg) |
 
 
 ---
