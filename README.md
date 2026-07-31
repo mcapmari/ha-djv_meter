@@ -1,5 +1,5 @@
 # 🏠 ha-djv_meter  
-**Home Assistant Custom Integration for [DJV-COM](https://djv-com.net/) Portal**
+**Home Assistant Custom Integration for [DJV-COM](https://djv-com.net/) Portal gas and utility meters used by Energocom and Moldovagaz in Moldova.**
 
 ---
 
