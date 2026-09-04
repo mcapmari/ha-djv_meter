@@ -6,6 +6,14 @@
 ## 📘 Overview  
 `ha-djv_meter` is a **Home Assistant custom integration** that connects to the [DJV-COM](https://djv-com.net/web/public/pv/#/login) online portal to fetch gas meter data for gas meters in the Republic of Moldova.
 
+## 📱 Official Mobile App
+DJV-COM also publishes an official **"Balance mobile"** app that mirrors the same
+BALANCE web portal this integration connects to. It's a useful reference if you
+want to see what data is available or compare readings:
+
+- Android: https://play.google.com/store/apps/details?id=com.djv.balance
+- iOS: https://apps.apple.com/app/balance-mobile/id1569561297
+
 It provides access to key metrics from your DJV-COM account:
 
 - 📅 **Current Month** consumption  
